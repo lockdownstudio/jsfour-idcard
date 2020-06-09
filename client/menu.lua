@@ -78,8 +78,7 @@ function IdMenu()
                function(data, menu)
                 menu.close()
                end
-            end),
-            end
+            end)
         elseif data.current.value == 'show_id' then
 
            local player, distance = ESX.Game.GetClosestPlayer()
