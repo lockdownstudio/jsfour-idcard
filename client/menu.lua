@@ -96,7 +96,7 @@ function IdMenu()
            end
 
         elseif data.current.value == 'show_licenses' then
-            ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'show_licenses', {
+          --[[ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'show_licenses', {
                 title = _U('license_menu'),
                 align = 'top-left',
                 elements = {
@@ -150,9 +150,10 @@ function IdMenu()
             function(data, menu)
                     menu.close()
                 end
-            end)
+            end) ]]--
         end
-    end, function(data, menu)
+    end,
+        function(data, menu)
             menu.close()
         end
     end)
