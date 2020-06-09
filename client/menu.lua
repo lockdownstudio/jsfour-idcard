@@ -47,7 +47,7 @@ function IdMenu()
         }
     }, function(data, menu)
         if data.current.value == 'check_id' then
-            ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'check_id', {
+        --[[ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'check_id', {
                 title = _U('id_check_menu'),
                 align = 'top-left',
                 elements = {
@@ -57,27 +57,32 @@ function IdMenu()
                     {label = _U('driver_check'), value = 'driver_check'},
                     {label = _U('weed_check'), value = 'weed_check'}
                 }
-            }, function(data, menu)
-                if data.current.value == 'id_check' then
-                    TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()))
-                    ESX.UI.Menu.CloseAll()
-                elseif data.current.value == 'aircraft_check' then
-                    TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'aircraft')
-                    ESX.UI.Menu.CloseAll()
-                elseif data.current.value == 'boat_check' then
-                    TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'boat')
-                    ESX.UI.Menu.CloseAll()
-                elseif data.current.value == 'driver_check' then
-                    TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'driver')
-                    ESX.UI.Menu.CloseAll()
-                elseif data.current.value == 'weed_check' then
-                    TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'weed')
-                    ESX.UI.Menu.CloseAll()
+            },
+
+                function(data, menu)
+
+                    if data.current.value == 'id_check' then
+                        TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()))
+                        ESX.UI.Menu.CloseAll()
+                    elseif data.current.value == 'aircraft_check' then
+                        TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'aircraft')
+                        ESX.UI.Menu.CloseAll()
+                    elseif data.current.value == 'boat_check' then
+                        TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'boat')
+                        ESX.UI.Menu.CloseAll()
+                    elseif data.current.value == 'driver_check' then
+                        TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'driver')
+                        ESX.UI.Menu.CloseAll()
+                    elseif data.current.value == 'weed_check' then
+                        TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'weed')
+                        ESX.UI.Menu.CloseAll()
+                    end
+
+                end, 
+                function(data, menu) 
+                    menu.close() 
                 end
-               end, function(data, menu)
-                menu.close()
-               end
-            end)
+            end) ]]--
         elseif data.current.value == 'show_id' then
 
            local player, distance = ESX.Game.GetClosestPlayer()
@@ -100,7 +105,9 @@ function IdMenu()
                     {label = _U('driver_show'), value = 'driver_show'},
                     {label = _U('weed_show'), value = 'weed_show'}
                 }                
-            }, function(data, menu)
+            }, 
+            
+            function(data, menu)
                 if data.current.value == 'aircraft_show' then
                     local player, distance = ESX.Game.GetClosestPlayer()
                     if distance ~= -1 and distance <= 3.0 then
@@ -138,7 +145,9 @@ function IdMenu()
                         ESX.UI.Menu.CloseAll()                        
                     end
                 end
-                end, function(data, menu)
+
+            end,
+            function(data, menu)
                     menu.close()
                 end
             end)
