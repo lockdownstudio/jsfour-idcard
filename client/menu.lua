@@ -74,8 +74,7 @@ function IdMenu()
                     TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'weed')
                     ESX.UI.Menu.CloseAll()
                 end
-               end,
-               function(data, menu)
+               end, function(data, menu)
                 menu.close()
                end
             end)
@@ -139,14 +138,12 @@ function IdMenu()
                         ESX.UI.Menu.CloseAll()                        
                     end
                 end
-                end,
-                function(data, menu)
+                end, function(data, menu)
                     menu.close()
                 end
-            end),
+            end)
         end
-        end,
-        function(data, menu)
+    end, function(data, menu)
             menu.close()
         end
     end)
