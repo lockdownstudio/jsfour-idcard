@@ -34,7 +34,7 @@ Citizen.CreateThread(function()
     end
 end)
 
---[[ function IdMenu()
+function IdMenu()
     ESX.UI.Menu.CloseAll()
 
     ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'id_card_menu', {
@@ -45,7 +45,8 @@ end)
             {label = _U('show_id'), value = 'show_id'},
             {label = _U('show_licenses'), value = 'show_licenses'}
         }
-    }, function(data, menu)
+    }, 
+    function(data, menu)
         if data.current.value == 'check_id' then
         ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'check_id', {
                 title = _U('id_check_menu'),
@@ -157,4 +158,4 @@ end)
             menu.close()
         end
     end)
-end ]]--
+end
