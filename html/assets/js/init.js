@@ -61,6 +61,7 @@ $(document).ready(function(){
         $('#name').css('color', '#282828');
         $('#name').text(userData.firstname + ' ' + userData.lastname);
         $('#dob').text(userData.dateofbirth);
+        $('#height').text(userData.height);
         $('#signature').text(userData.firstname + ' ' + userData.lastname);
 
         $('#id-card').css('background', 'url(assets/images/gun.png)');
@@ -78,6 +79,7 @@ $(document).ready(function(){
         $('#name').css('color', '#282828');        
         $('#name').text(userData.firstname + ' ' + userData.lastname);
         $('#dob').text(userData.dateofbirth);
+        $('#height').text(userData.height);
         $('#signature').text(userData.firstname + ' ' + userData.lastname);
 
         $('#id-card').css('background', 'url(assets/images/weed.png)');
@@ -95,6 +97,7 @@ $(document).ready(function(){
         $('#name').css('color', '#282828');
         $('#name').text(userData.firstname + ' ' + userData.lastname);
         $('#dob').text(userData.dateofbirth);
+        $('#height').text(userData.height);
         $('#signature').text(userData.firstname + ' ' + userData.lastname);
 
         $('#id-card').css('background', 'url(assets/images/boat.png)');
@@ -112,6 +115,7 @@ $(document).ready(function(){
         $('#name').css('color', '#282828');
         $('#name').text(userData.firstname + ' ' + userData.lastname);
         $('#dob').text(userData.dateofbirth);
+        $('#height').text(userData.height);
         $('#signature').text(userData.firstname + ' ' + userData.lastname);
 
         $('#id-card').css('background', 'url(assets/images/aircraft.png)');
