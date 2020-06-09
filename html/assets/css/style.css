@@ -26,7 +26,7 @@ p {
 img {
   position: absolute;
   left:7px;
-  top:55px;
+  top:5px;
 }
 #name {
   font-weight: bolder;
@@ -35,7 +35,7 @@ img {
 }
 #inline {
   position: absolute;
-  top: 159px;
+  top: 109px;
 }
 #dob {
   position: absolute;
@@ -62,7 +62,7 @@ img {
 }
 #licenses {
   position: absolute;
-  top: 159px;
+  top: 109px;
   right: 33px;
   width: 50px;
 }
