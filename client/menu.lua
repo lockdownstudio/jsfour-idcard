@@ -35,6 +35,7 @@ Citizen.CreateThread(function()
 end)
 
 function IdMenu()
+
     ESX.UI.Menu.CloseAll()
 
     ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'id_card_menu', {
@@ -59,10 +60,9 @@ function IdMenu()
                     {label = _U('weed_check'), value = 'weed_check'}
                 }
             },
-
                 function(data, menu)
 
-                    if data.current.value == 'id_check' then
+                --[[    if data.current.value == 'id_check' then
                         TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()))
                         ESX.UI.Menu.CloseAll()
                     elseif data.current.value == 'aircraft_check' then
@@ -77,10 +77,10 @@ function IdMenu()
                     elseif data.current.value == 'weed_check' then
                         TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'weed')
                         ESX.UI.Menu.CloseAll()
-                    end
+                    end ]]--
 
                 end, 
-                function(data, menu) 
+                function(data, menu)
                     menu.close() 
                 end
             end)
