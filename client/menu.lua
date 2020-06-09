@@ -34,7 +34,7 @@ Citizen.CreateThread(function()
     end
 end)
 
-function IdMenu()
+--[[ function IdMenu()
     ESX.UI.Menu.CloseAll()
 
     ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'id_card_menu', {
@@ -47,7 +47,7 @@ function IdMenu()
         }
     }, function(data, menu)
         if data.current.value == 'check_id' then
-        --[[ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'check_id', {
+        ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'check_id', {
                 title = _U('id_check_menu'),
                 align = 'top-left',
                 elements = {
@@ -82,7 +82,7 @@ function IdMenu()
                 function(data, menu) 
                     menu.close() 
                 end
-            end) ]]--
+            end)
         elseif data.current.value == 'show_id' then
 
            local player, distance = ESX.Game.GetClosestPlayer()
@@ -96,7 +96,7 @@ function IdMenu()
            end
 
         elseif data.current.value == 'show_licenses' then
-          --[[ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'show_licenses', {
+          ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'show_licenses', {
                 title = _U('license_menu'),
                 align = 'top-left',
                 elements = {
@@ -150,11 +150,11 @@ function IdMenu()
             function(data, menu)
                     menu.close()
                 end
-            end) ]]--
+            end)
         end
     end,
         function(data, menu)
             menu.close()
         end
     end)
-end
+end ]]--
