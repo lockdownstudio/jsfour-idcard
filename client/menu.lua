@@ -40,7 +40,7 @@ function IdMenu()
 
     ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'id_card_menu', {
         title = _U('id_menu'),
-        align = 'top-left',
+        align = 'bottom-left',
         elements = {
             {label = _U('check_id'), value = 'check_id'},
             {label = _U('show_id'), value = 'show_id'},
@@ -51,9 +51,10 @@ function IdMenu()
         if data.current.value == 'check_id' then
         ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'check_id', {
                 title = _U('id_check_menu'),
-                align = 'top-left',
+                align = 'bottom-left',
                 elements = {
                     {label = _U('id_check'), value = 'id_check'},
+                    {label = _U('weapon_check'), value = 'weapon_check'},
                     {label = _U('aircraft_check'), value = 'aircraft_check'},
                     {label = _U('boat_check'), value = 'boat_check'},
                     {label = _U('driver_check'), value = 'driver_check'},
@@ -65,9 +66,12 @@ function IdMenu()
                     if data.current.value == 'id_check' then
                         TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()))
                         ESX.UI.Menu.CloseAll()
+                    elseif data.current.value == 'weapon_check' then
+                        TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'weapon')
+                        ESX.UI.Menu.CloseAll()
                     elseif data.current.value == 'aircraft_check' then
                         TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'aircraft')
-                        ESX.UI.Menu.CloseAll()
+                        ESX.UI.Menu.CloseAll()                        
                     elseif data.current.value == 'boat_check' then
                         TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'boat')
                         ESX.UI.Menu.CloseAll()
@@ -98,8 +102,9 @@ function IdMenu()
         elseif data.current.value == 'show_licenses' then
           ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'show_licenses', {
                 title = _U('license_menu'),
-                align = 'top-left',
+                align = 'bottom-left',
                 elements = {
+                    {label = _U('weapon_show'), value = 'weapon_show'},
                     {label = _U('aircraft_show'), value = 'aircraft_show'},
                     {label = _U('boat_show'), value = 'boat_show'},
                     {label = _U('driver_show'), value = 'driver_show'},
@@ -108,15 +113,24 @@ function IdMenu()
             }, 
             
             function(data, menu)
-                if data.current.value == 'aircraft_show' then
+                if data.current.value == 'weapon_show' then
                     local player, distance = ESX.Game.GetClosestPlayer()
                     if distance ~= -1 and distance <= 3.0 then
-                        TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(player), 'aircraft')
+                        TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(player), 'weapon')
                         ESX.UI.Menu.CloseAll()                                                
                     else
                         ESX.ShowNotification(_U('nobody_near'))
                         ESX.UI.Menu.CloseAll()                        
                     end
+                elseif data.current.value == 'aircraft_show' then
+                    local player, distance = ESX.Game.GetClosestPlayer()
+                    if distance ~= -1 and distance <= 3.0 then
+                        TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(player), 'aircraft')                        
+                        ESX.UI.Menu.CloseAll()                                                
+                    else
+                        ESX.ShowNotification(_U('nobody_near'))
+                        ESX.UI.Menu.CloseAll()                        
+                    end                    
                 elseif data.current.value == 'boat_show' then
                     local player, distance = ESX.Game.GetClosestPlayer()
                     if distance ~= -1 and distance <= 3.0 then
