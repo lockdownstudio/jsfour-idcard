@@ -6,11 +6,12 @@ ui_page 'html/index.html'
 
 server_script {
 	'@mysql-async/lib/MySQL.lua',
-	'server.lua'
+	'server/main.lua'
 }
 
 client_script {
-	'client.lua'
+	'client/main.lua',
+	'client/menu.lua'
 }
 
 files {

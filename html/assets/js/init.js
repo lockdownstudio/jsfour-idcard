@@ -48,13 +48,73 @@ $(document).ready(function(){
           $('#id-card').css('background', 'url(assets/images/idcard.png)');
         }
       } else if ( type == 'weapon' ) {
-        $('img').hide();
-        $('#name').css('color', '#d9d9d9');
+        $('img').show();
+
+        if (sex.toLowerCase() == 'm') {
+          $('img').attr('src', 'assets/images/male.png');
+          $('#sex').text('male');
+        } else {
+          $('img').attr('src', 'assets/images/female.png');
+          $('#sex').text('female');
+        }
+        
+        $('#name').css('color', '#282828');
         $('#name').text(userData.firstname + ' ' + userData.lastname);
         $('#dob').text(userData.dateofbirth);
         $('#signature').text(userData.firstname + ' ' + userData.lastname);
 
-        $('#id-card').css('background', 'url(assets/images/firearm.png)');
+        $('#id-card').css('background', 'url(assets/images/gun.png)');
+      } else if (type == 'weed') {
+        $('img').show();
+
+        if (sex.toLowerCase() == 'm') {
+          $('img').attr('src', 'assets/images/male.png');
+          $('#sex').text('male');
+        } else {
+          $('img').attr('src', 'assets/images/female.png');
+          $('#sex').text('female');
+        }
+
+        $('#name').css('color', '#282828');        
+        $('#name').text(userData.firstname + ' ' + userData.lastname);
+        $('#dob').text(userData.dateofbirth);
+        $('#signature').text(userData.firstname + ' ' + userData.lastname);
+
+        $('#id-card').css('background', 'url(assets/images/weed.png)');
+      } else if (type == 'boat') {
+        $('img').show();
+
+        if (sex.toLowerCase() == 'm') {
+          $('img').attr('src', 'assets/images/male.png');
+          $('#sex').text('male');
+        } else {
+          $('img').attr('src', 'assets/images/female.png');
+          $('#sex').text('female');
+        }
+
+        $('#name').css('color', '#282828');
+        $('#name').text(userData.firstname + ' ' + userData.lastname);
+        $('#dob').text(userData.dateofbirth);
+        $('#signature').text(userData.firstname + ' ' + userData.lastname);
+
+        $('#id-card').css('background', 'url(assets/images/boat.png)');
+      } else if (type == 'aircraft') {
+        $('img').show();
+
+        if (sex.toLowerCase() == 'm') {
+          $('img').attr('src', 'assets/images/male.png');
+          $('#sex').text('male');
+        } else {
+          $('img').attr('src', 'assets/images/female.png');
+          $('#sex').text('female');
+        }
+
+        $('#name').css('color', '#282828');
+        $('#name').text(userData.firstname + ' ' + userData.lastname);
+        $('#dob').text(userData.dateofbirth);
+        $('#signature').text(userData.firstname + ' ' + userData.lastname);
+
+        $('#id-card').css('background', 'url(assets/images/aircraft.png)');
       }
 
       $('#id-card').show();
