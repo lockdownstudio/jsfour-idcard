@@ -40,7 +40,7 @@ function IdMenu()
 
     ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'id_card_menu', {
         title = _U('id_menu'),
-        align = 'bottom-left',
+        align = 'top-left',
         elements = {
             {label = _U('check_id'), value = 'check_id'},
             {label = _U('show_id'), value = 'show_id'},
@@ -51,7 +51,7 @@ function IdMenu()
         if data.current.value == 'check_id' then
         ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'check_id', {
                 title = _U('id_check_menu'),
-                align = 'bottom-left',
+                align = 'top-left',
                 elements = {
                     {label = _U('id_check'), value = 'id_check'},
                     {label = _U('weapon_check'), value = 'weapon_check'},
@@ -102,7 +102,7 @@ function IdMenu()
         elseif data.current.value == 'show_licenses' then
           ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'show_licenses', {
                 title = _U('license_menu'),
-                align = 'bottom-left',
+                align = 'top-left',
                 elements = {
                     {label = _U('weapon_show'), value = 'weapon_show'},
                     {label = _U('aircraft_show'), value = 'aircraft_show'},
