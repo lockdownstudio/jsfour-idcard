@@ -73,6 +73,7 @@ function IdMenu()
                 elseif data.current.value == 'weed_check' then
                     TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'weed')
                     ESX.UI.Menu.CloseAll()
+                end
                end,
                function(data, menu)
                 menu.close()
