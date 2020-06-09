@@ -62,7 +62,7 @@ function IdMenu()
             },
                 function(data, menu)
 
-                --[[    if data.current.value == 'id_check' then
+                    if data.current.value == 'id_check' then
                         TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()))
                         ESX.UI.Menu.CloseAll()
                     elseif data.current.value == 'aircraft_check' then
@@ -77,13 +77,12 @@ function IdMenu()
                     elseif data.current.value == 'weed_check' then
                         TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'weed')
                         ESX.UI.Menu.CloseAll()
-                    end ]]--
+                    end
 
                 end, 
                 function(data, menu)
                     menu.close() 
-                end
-            end)
+                end)
         elseif data.current.value == 'show_id' then
 
            local player, distance = ESX.Game.GetClosestPlayer()
@@ -150,12 +149,10 @@ function IdMenu()
             end,
             function(data, menu)
                     menu.close()
-                end
-            end)
+                end)
         end
     end,
         function(data, menu)
             menu.close()
-        end
     end)
 end
