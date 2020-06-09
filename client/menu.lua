@@ -25,7 +25,7 @@ Citizen.CreateThread(function()
         local ped = PlayerPedId()
 
         if not IsPedDeadOrDying(ped, 1) then
-            if IsControlJustPressed(1, 20) and GetLastInputMethod(2) then -- change keybinding
+            if IsControlJustPressed(1, 244) and GetLastInputMethod(2) then -- change keybinding
                 IdMenu()
             end
         else
