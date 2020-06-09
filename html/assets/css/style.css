@@ -35,7 +35,7 @@ img {
 }
 #inline {
   position: absolute;
-  top: 119px;
+  top: 90px;
 }
 #dob {
   position: absolute;
@@ -62,7 +62,7 @@ img {
 }
 #licenses {
   position: absolute;
-  top: 119px;
+  top: 90px;
   right: 33px;
   width: 50px;
 }
