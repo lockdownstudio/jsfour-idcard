@@ -14,6 +14,9 @@ AddEventHandler('jsfour-idcard:open', function(ID, targetID, type)
 		if (user[1] ~= nil) then
 			MySQL.Async.fetchAll('SELECT type FROM user_licenses WHERE owner = @identifier', {['@identifier'] = identifier},
 			function (licenses)
+				local hash = {}
+				local res = {}
+
 				if type ~= nil then
 					for i=1, #licenses, 1 do
 						if type == 'driver' then
@@ -43,9 +46,17 @@ AddEventHandler('jsfour-idcard:open', function(ID, targetID, type)
 				end
 
 				if show then
+					-- Remove multiple licenses
+					for _,v in ipairs(licenses) do
+						if (not hash[v]) then
+							res[#res+1] = v -- you could print here instead of saving to result table if you wanted
+							hash[v] = true
+						end
+					end
+
 					local array = {
 						user = user,
-						licenses = licenses
+						licenses = res
 					}
 					TriggerClientEvent('jsfour-idcard:open', _source, array, type)
 				else
